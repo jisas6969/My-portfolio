@@ -1,0 +1,44 @@
+.footer {
+  background-color: rgb(24, 22, 20);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.footerNav {
+  margin-bottom: 2rem;
+}
+
+.footerNav a {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  color: beige;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.footerNav a:hover {
+  color: rgb(212, 163, 64);
+}
+
+.footerSocials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footerSocials img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footerSocials img:hover {
+  transform: scale(1.15);
+}
+
+.footerCopy {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}

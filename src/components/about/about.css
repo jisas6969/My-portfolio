@@ -1,0 +1,143 @@
+
+#about {
+  min-height: calc(100vh - 7rem);  
+  min-height: 100vh;
+  width: 100%;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.aboutImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.aboutImage {
+  position: relative;
+}
+
+/* Optional dark overlay para bagay sa dark theme */
+.aboutImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+
+.aboutContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6rem;
+  text-align: left;
+}
+
+/* Keep your original theme colors */
+.aboutContent h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.aboutContent p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 51rem;
+}
+
+
+.slide-left,
+.slide-right {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@media (max-width: 900px) {
+  #about {
+    height: auto;
+  }
+
+  .aboutContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutImage {
+    height: 400px;
+  }
+
+  .aboutContent {
+    padding: 4rem 2rem;
+  }
+}
+
+/* ============================= */
+/* SKILLS SECTION */
+/* ============================= */
+
+.skillsSection {
+  margin-top: 4rem;
+}
+
+.skillsTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid rgb(212, 163, 64);
+  border-radius: 0.5rem;
+}
+
+.skillsGroup {
+  margin-bottom: 2rem;
+}
+
+.skillsGroup span {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.skillsGrid img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skillsGrid img:hover {
+  transform: scale(1.1);
+}

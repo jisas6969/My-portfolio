@@ -1,32 +1,35 @@
-import './skills.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
+import "./skills.css";
 
-import Programming from '../../assets/programming.png';
-import Technologies from '../../assets/technologies.png';
-import Technical from '../../assets/technical.png';
+/* IMPORT ICONS (recommended way) */
+import cssIcon from "../../assets/icons/css.png";
+import htmlIcon from "../../assets/icons/html.png";
+import jsIcon from "../../assets/icons/js.png";
+import pythonIcon from "../../assets/icons/python.png";
+import javaIcon from "../../assets/icons/java.png";
+
+import blenderIcon from "../../assets/icons/blender.png";
+import wordpressIcon from "../../assets/icons/wordpress.png";
+import vscodeIcon from "../../assets/icons/vscode.png";
 
 const Skills = () => {
-  const elementsRef = useRef([]);
+  const gridRefs = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const index = Number(entry.target.dataset.index) || 0;
-
           if (entry.isIntersecting) {
-            entry.target.style.transitionDelay = `${index * 0.15}s`;
-            entry.target.classList.add('show');
-          } else {
-            entry.target.classList.remove('show');
-            entry.target.style.transitionDelay = '0s';
+            entry.target.classList.add("show");
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
-    elementsRef.current.forEach((el) => el && observer.observe(el));
+    gridRefs.current.forEach((grid) => {
+      if (grid) observer.observe(grid);
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -35,68 +38,35 @@ const Skills = () => {
     <section id="skills">
       <div className="skillsContainer">
 
-        {/* ABOUT — index 0 */}
-        <div
-          className="aboutColumn slide-left"
-          data-index="0"
-          ref={(el) => (elementsRef.current[0] = el)}
-        >
-          <span className="skillTitle">About Me</span>
-          <span className="skillDescription">
-            I’m a student with experience in Java, Python, and JavaScript,
-            working at the intersection of machine learning, accessibility,
-            and creative technology.
-          </span>
+        <h2 className="skillsTitleBox">Technical Skills</h2>
+
+        {/* KNOWLEDGE SECTION */}
+        <div className="skillsGroup">
+          <h3>Knowledgeable in:</h3>
+
+          <div
+            className="skillsGrid"
+            ref={(el) => (gridRefs.current[0] = el)}
+          >
+            <img src={cssIcon} alt="CSS" />
+            <img src={htmlIcon} alt="HTML" />
+            <img src={jsIcon} alt="JavaScript" />
+            <img src={pythonIcon} alt="Python" />
+            <img src={javaIcon} alt="Java" />
+          </div>
         </div>
 
-        <div
-          className="skillBar slide-right"
-          data-index="1"
-          ref={(el) => (elementsRef.current[1] = el)}
-        >
-          <div className="skill">Skills</div>
+        {/* TOOLS SECTION */}
+        <div className="skillsGroup">
+          <h3>Tools & Platforms:</h3>
 
-          <div className="skillBars">
-
-            {/* SKILL 1 */}
-            <div
-              className="skillbar fade-up"
-              data-index="2"
-              ref={(el) => (elementsRef.current[2] = el)}
-            >
-              <img src={Programming} alt="programming" className="skillBarImg" />
-              <div className="skillBarText">
-                <h2>Programming Languages</h2>
-                <p>Java, Python, JS, React (Basic)</p>
-              </div>
-            </div>
-
-            {/* SKILL 2 */}
-            <div
-              className="skillbar fade-up"
-              data-index="3"
-              ref={(el) => (elementsRef.current[3] = el)}
-            >
-              <img src={Technologies} alt="technologies" className="skillBarImg" />
-              <div className="skillBarText">
-                <h2>Technical Skills</h2>
-                <p>Machine Learning, HTML, CSS, 3D Animation</p>
-              </div>
-            </div>
-
-            {/* SKILL 3 */}
-            <div
-              className="skillbar fade-up"
-              data-index="4"
-              ref={(el) => (elementsRef.current[4] = el)}
-            >
-              <img src={Technical} alt="tools" className="skillBarImg" />
-              <div className="skillBarText">
-                <h2>Tools</h2>
-                <p>NetBeans, VS Code, Blender</p>
-              </div>
-            </div>
-
+          <div
+            className="skillsGrid"
+            ref={(el) => (gridRefs.current[1] = el)}
+          >
+            <img src={blenderIcon} alt="Blender" />
+            <img src={wordpressIcon} alt="WordPress" />
+            <img src={vscodeIcon} alt="VS Code" />
           </div>
         </div>
 

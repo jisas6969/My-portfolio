@@ -33,7 +33,7 @@ const Navbar = () => {
       <img src={Logo} alt="logo" className="logo" />
 
       <div className="desktopMenu">
-        <Link className="desktopMenuListItem" to="home" smooth duration={500}>
+        <Link className="desktopMenuListItem" to="intro" smooth duration={500}offset={-112}>
           Home
         </Link>
         <Link className="desktopMenuListItem" to="about" smooth duration={500}>
