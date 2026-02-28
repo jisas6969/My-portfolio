@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    overflow-y: scroll;
+    
+    
+}
+
+body.dark {
+  color: beige;
+  background-color: rgb(24, 22, 20);
+
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.06) 10%,
+      rgba(255,255,255,0.02) 45%,
+      transparent 30%
+    ),
+    linear-gradient(
+      210deg,
+      rgba(0,0,0,0.55) 10%,
+      rgba(0,0,0,0.25) 55%,
+      transparent 35%
+    ),
+
+    linear-gradient(
+      160deg,
+      rgba(255,255,255,0.04) 10%,
+      transparent 35%
+    ),
+
+    linear-gradient(
+      45deg,
+      rgba(0,0,0,0.35) 20%,
+      transparent 20%
+    ),
+
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.03),
+      rgba(0,0,0,0.6)
+    );
+
+  background-attachment: fixed;
+}
+
+
+body.light {
+  color: rgb(24, 22, 20);
+  background-color: beige;
+
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(0,0,0,0.06) 10%,
+      rgba(0,0,0,0.02) 45%,
+      transparent 22%
+    ),
+
+    linear-gradient(
+      210deg,
+      rgba(255,255,255,0.8) 10%,
+      rgba(255,255,255,0.35) 55%,
+      transparent 22%
+    ),
+
+    linear-gradient(
+      160deg,
+      rgba(0,0,0,0.04) 10%,
+      transparent 22%
+    ),
+
+
+    linear-gradient(
+      45deg,
+      rgba(0,0,0,0.08) 20%,
+      transparent 22%
+    ),
+
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.9),
+      rgba(0,0,0,0.08)
+    );
+
+  background-attachment: fixed;
+}
+body {
+  cursor: url("/cursor.png"), auto;
+}
+
+a,
+button,
+[role="button"],
+.desktopMenuListItem,
+.introBtn,
+.socialIcon,
+.clickable {
+  cursor: url("/pointer.png"), pointer;
+}
+
+
+

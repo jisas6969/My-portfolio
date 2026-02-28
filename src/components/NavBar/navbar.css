@@ -1,0 +1,108 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    height: 7rem;
+    width: 100vw;
+    max-width: 125rem;
+    margin: 0 auto;
+    padding: 1rem 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background-color: transparent; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+
+.dark .navbar.scrolled {
+    background-color: rgb(34, 32, 30, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: beige;
+}
+
+.light .navbar.scrolled {
+    background-color: rgb(34, 32, 30, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: beige;
+}
+
+.logo {
+    object-fit: cover;
+    height: 4rem;
+    width: 5rem;
+    margin-right: auto;
+}
+
+.desktopMenu {
+    display: flex;
+    align-items: center;
+}
+
+.desktopMenuListItem {
+    margin: 0 1.5rem;
+    font-size: 1rem;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.desktopMenuListItem:hover {
+    color: rgb(212, 163, 64);
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid rgb(212, 163, 64);
+}
+
+/* ================= BUTTON ================= */
+.desktopMenuBtn {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 1rem;
+    margin-left: 1rem;
+
+    border-radius: 2rem;
+    max-height: 64px;
+    max-width: 64px;
+
+    transition: transform 0.2s ease;
+}
+
+.desktopMenuBtn:hover {
+    transform: scale(1.1);
+}
+
+.desktopMenuImg {
+    filter: brightness(0) invert(1);
+    transition: filter 0.25s ease, transform 0.2s ease;
+    object-fit: cover;
+    width: 22px;
+    height: 22px;
+}
+
+.light .navbar:not(.scrolled) .desktopMenuImg {
+    filter: brightness(0);
+    opacity: 1;
+}
+
+.light .navbar.scrolled .desktopMenuImg {
+    filter: brightness(0) invert(1);
+}
