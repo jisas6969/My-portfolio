@@ -36,16 +36,16 @@ const Navbar = () => {
         <Link className="desktopMenuListItem" to="intro" smooth duration={500}offset={-112}>
           Home
         </Link>
-        <Link className="desktopMenuListItem" to="about" smooth duration={500}>
+        <Link className="desktopMenuListItem" to="aboutHero" smooth duration={500}>
           About
         </Link>
         <Link
           className="desktopMenuListItem"
-          to="portfolio"
+          to="project"
           smooth
           duration={500}
         >
-          Portfolio
+          Project
         </Link>
         <Link className="desktopMenuListItem" to="contact" smooth duration={500}>
           Contact

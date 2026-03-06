@@ -1,180 +1,248 @@
+/* MAIN SECTION */
 #intro {
-  position: relative;
-  height: calc(100vh - 7rem);   /* FULL SCREEN minus navbar */
-  width: 100%;
-  margin: 0;
-  padding: 0 6rem;
+  height: calc(100vh - 7rem);
+  width: 100vw;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
   overflow: hidden;
 }
 
-.img-frame {
-  position: absolute;
-  top: 60%;
-  right: 13rem;
-  transform: translateY(-70%);
-  width: 450px;
-  height: 450px;
-  display: flex;
-  align-items: first baseline;
-  justify-content: center;
-  z-index: 1;
-}
 
-
-
-.img-frame::before {
-  content: "";
-  position: absolute;
-  width: 480px;
-  height: 480px;
-  top: 10px; /* 👈 inaangat ang diamond */
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  background: transparent;
-  border: 6px solid rgb(212, 163, 64);
-  border-radius: 5%;
-  z-index: -1;
-}
-.img-frame::after {
-  content: "";
-  position: absolute;
-  width: 480px;
-  height: 480px;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%) rotate(53deg);
-  background: transparent;
-  border: 6px solid rgb(212, 163, 64);
-  border-radius: 5%;
-  z-index: -1;
-}
-
-
-.bg {
-  max-width: 600px;
-  max-height: 600px;
-  object-fit: contain;
-  border-radius: 6px;
-  transition: transform 0.2s ease;
-}
-
-
+/* LEFT SIDE */
 .introcontent {
+  width: 50%;
   height: 100%;
-  padding: 2rem;
-  font-size: 3rem;
+
+  padding: 0 6rem;
+
+  font-size: 5rem;
   font-weight: 700;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 10rem;
 }
 
+
+/* RIGHT SIDE */
+.img-frame {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #1a1a1a;
+}
+.dark .img-frame {
+  background-color: beige;
+}
+.socialLinks{
+  position:absolute;
+  right:50px;
+  bottom:50px;   
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:22px;
+}
+
+.socialLinks::after{
+  content:"";
+  width:1px;
+  height:80px;
+  margin-bottom:10px;
+}
+.dark .socialLinks::after{
+  background: rgba(0,0,0,0.6);
+}
+
+/* LIGHT MODE */
+.light .socialLinks::after{
+  background: rgba(255,255,255,0.6);
+}
+/* ICON STYLE */
+.socialLinks img{
+  width:20px;
+  height:20px;
+  opacity:0.8;
+  transition:0.3s;
+}
+
+/* HOVER */
+.socialLinks img:hover{
+  opacity:1;
+  transform:translateY(-3px);
+}
+
+/* IMAGE */
+.bg {
+  width: 100%;
+  max-width: 700px; /* bigger image */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: -2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.bg:hover{
+  transform: scale(1.05);
+}
+
+
+/* HELLO TEXT */
 .hello {
   font-size: 1.75rem;
   font-weight: 100;
-  margin-top: 10rem;
+  margin-bottom: 0.5rem;
 }
 
+
+/* NAME */
 .introName {
   color: rgb(212, 163, 64);
-  
 }
+
+
+/* BLINK CURSOR */
 .introName::after {
-    margin-left: 4px;
-    animation: blink 1s infinite;
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 
-
-.introPara {
-  font-size: medium;
-  font-weight: 300;
-  letter-spacing: 1px;
-  
-}
-.introBtn {
-    margin-top: 1rem;
-    padding: 0.75rem 1.3rem;
-    font-size: 0.8rem;
-    max-width: 7.8rem;
-    background-color: beige;
-    color: #000;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    display: inline-block;
-
-    transition: transform 0.2s ease, background-color 0.3s ease;
+/* BUTTON CONTAINER */
+.introButtons{
+  display:flex;
+  gap:24px;
+  margin-top:2rem;
 }
 
-.introBtn:hover {
-    transform: scale(1.05);
-    background-color: rgb(230, 180, 80);
+
+/* PRIMARY BUTTON */
+.btnPrimary{
+  background:#0f1114;
+  color:white;
+  text-decoration:none;
+
+  padding:18px 42px;
+
+  font-size:13px;
+  letter-spacing:4px;
+  font-weight:600;
+
+  transition:0.3s;
 }
-.light .introBtn{
+
+.btnPrimary:hover{
+  transform:translateY(-2px);
+  background:#000;
+}
+
+
+/* OUTLINE BUTTON */
+.btnOutline{
+  border:2px solid #0f1114;
+  color:#0f1114;
+  text-decoration:none;
+
+  padding:18px 42px;
+
+  font-size:13px;
+  letter-spacing:4px;
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+.btnOutline:hover{
+  background:#0f1114;
+  color:white;
+}
+
+/* DARK MODE BUTTON */
+.light .btnPrimary{
   background-color: rgb(24, 22, 20);
-  color: beige;   
-}
-.light .introBtn:hover {
-    transform: scale(1.05);
-    background-color: rgb(230, 180, 80);
-}
-.introButtons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 0.2rem;
+  color: beige;
 }
 
+.light .btnPrimary:hover {
+  background-color: rgb(230, 180, 80);
+}
+.dark .btnPrimary{
+  background:white;
+  color:#0f1114;
+}
+
+.dark .btnOutline{
+  border:2px solid white;
+  color:white;
+}
+
+.dark .btnOutline:hover{
+  background:white;
+  color:#0f1114;
+}
+.dark .btnPrimary:hover {
+  background-color: rgb(230, 180, 80);
+}
+
+
+/* SOCIAL ICON */
 .socialIcon {
   height: 2.6rem;
   width: 2.6rem;
-  background-color: transparent;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}
-.socialIcon {
-  margin-left: 0;
-  margin-top: 1rem; 
+
+  transition: transform 0.2s ease;
 }
 
+.socialIcon:hover{
+  transform: scale(1.1);
+}
+
+
+/* ICON IMAGE */
 .socialIcon img {
-  width: 64px;
+  width: 32px;
   height: 32px;
   object-fit: contain;
 }
 
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .img-frame {
-    position: static;
-    margin: 2rem auto;
-    transform: none;
-  }
 
-  .introcontent {
-    font-size: 2rem;
+  #intro{
+    flex-direction: column;
     text-align: center;
   }
-}
 
-@media (max-width: 600px) {
-  .img-frame {
-    opacity: 0.4;
+  .introcontent{
+    padding: 2rem;
+    align-items: center;
   }
 
-  .introcontent {
-    font-size: 1.8rem;
+  .img-frame{
+    width: 100%;
+    height: auto;
+    padding: 2rem;
   }
+
 }

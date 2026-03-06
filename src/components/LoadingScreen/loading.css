@@ -1,0 +1,45 @@
+/* =========================
+   LOADING OVERLAY
+========================= */
+
+.loading-container {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* GLASS EFFECT */
+  background: rgba(0, 0, 0, 0.4);  /* dark transparent overlay */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  z-index: 9999;
+
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+/* Fade out effect */
+.loading-container.fade-out {
+  opacity: 0;
+}
+
+/* =========================
+   LOGO STYLE
+========================= */
+
+.logo-svg {
+  width: 180px;
+  height: auto;
+
+  clip-path: inset(100% 0 0 0);
+  animation: fillUp 2s ease forwards;
+}
+
+@keyframes fillUp {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

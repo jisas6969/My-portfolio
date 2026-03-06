@@ -1,19 +1,18 @@
 import './intro.css';
 import { useState, useEffect } from 'react';
-
+import { Link } from "react-scroll";
 import bgOff from '../../assets/bg.png';
 import bgOn from '../../assets/bg-on.png';
-
-import fbIcon from '../../assets/facebook.png';
-import igIcon from '../../assets/instagram.png';
-import ttIcon from '../../assets/github.png';
+import facebookIcon from "../../assets/facebook.png";
+import instagramIcon from "../../assets/instagram.png";
+import githubIcon from "../../assets/github.png";
 
 const Intro = () => {
   const [isOn, setIsOn] = useState(false);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const fullText = "Louise";
+  const fullText = "Louise Soledad";
   const typingSpeed = 150;
   const deletingSpeed = 100;
   const pauseTime = 1500;
@@ -50,37 +49,28 @@ const Intro = () => {
         </span>
 
         <div className="introButtons">
-          <a href="/Louise-CV.pdf" download className="introBtn">
-            Download CV
-          </a>
 
-          <a
-            href="https://www.facebook.com/louise.soledad.7"
-            target="_blank"
-            rel="noreferrer"
-            className="socialIcon"
-          >
-            <img src={fbIcon} alt="Facebook" />
-          </a>
+  <Link
+    to="aboutHero"
+    smooth={true}
+    duration={500}
+    offset={-112}
+    className="btnPrimary"
+  >
+    MORE ABOUT ME
+  </Link>
 
-          <a
-            href="https://www.instagram.com/louiseeee666"
-            target="_blank"
-            rel="noreferrer"
-            className="socialIcon"
-          >
-            <img src={igIcon} alt="Instagram" />
-          </a>
+  <Link
+    to="contact"
+    smooth={true}
+    duration={500}
+    offset={-112}
+    className="btnOutline"
+  >
+    GET IN TOUCH
+  </Link>
 
-          <a
-            href="https://github.com/jisas6969"
-            target="_blank"
-            rel="noreferrer"
-            className="socialIcon"
-          >
-            <img src={ttIcon} alt="Github" />
-          </a>
-        </div>
+</div>
       </div>
 
       <div className="img-frame">
@@ -91,10 +81,26 @@ const Intro = () => {
           onMouseEnter={() => setIsOn(true)}
           onMouseLeave={() => setIsOn(false)}
         />
+        {/* SOCIAL LINKS */}
+  <div className="socialLinks">
 
+    <a href="https://www.facebook.com/louise.soledad.7" target="_blank" rel="noreferrer">
+              <img src={facebookIcon} alt="Facebook" />
+            </a>
+    
+            <a href="https://www.instagram.com/louiseeee666" target="_blank" rel="noreferrer">
+              <img src={instagramIcon} alt="Instagram" />
+            </a>
+    
+            <a href="https://github.com/jisas6969" target="_blank" rel="noreferrer">
+              <img src={githubIcon} alt="GitHub" />
+            </a>
+          </div>
 
-      </div>
+  </div>
+      
     </section>
+    
   );
 };
 

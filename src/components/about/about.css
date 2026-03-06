@@ -1,143 +1,175 @@
+/* ================= BASE ================= */
 
-#about {
-  min-height: calc(100vh - 7rem);  
-  min-height: 100vh;
-  width: 100%;
+.aboutWrapper {
+  color: beige;
+  overflow: hidden;
 }
 
-.aboutContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+/* LIGHT MODE */
+
+body.light .aboutWrapper,
+body.light .aboutLabel,
+body.light .heroRight,
+body.light .aboutText blockquote,
+body.light .aboutText p {
+  color: #1a1a1a;
 }
 
-.aboutImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+body.light .aboutCard {
+  color: #1a1a1a;
+  background-color: beige;
 }
 
-.aboutImage {
-  position: relative;
-}
+/* ================= HERO ================= */
 
-/* Optional dark overlay para bagay sa dark theme */
-.aboutImage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
-  );
-}
-
-
-.aboutContent {
-  height: 100%;
+.aboutHero {
+  height: 100vh;
+  padding: 0 8%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 6rem;
-  text-align: left;
-}
-
-/* Keep your original theme colors */
-.aboutContent h2 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.aboutContent p {
-  font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 51rem;
-}
-
-
-.slide-left,
-.slide-right {
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.slide-left {
-  transform: translateX(-80px);
-}
-
-.slide-right {
-  transform: translateX(80px);
-}
-
-.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-@media (max-width: 900px) {
-  #about {
-    height: auto;
-  }
-
-  .aboutContainer {
-    grid-template-columns: 1fr;
-  }
-
-  .aboutImage {
-    height: 400px;
-  }
-
-  .aboutContent {
-    padding: 4rem 2rem;
-  }
-}
-
-/* ============================= */
-/* SKILLS SECTION */
-/* ============================= */
-
-.skillsSection {
-  margin-top: 4rem;
-}
-
-.skillsTitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid rgb(212, 163, 64);
-  border-radius: 0.5rem;
-}
-
-.skillsGroup {
-  margin-bottom: 2rem;
-}
-
-.skillsGroup span {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.skillsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   align-items: center;
 }
 
-.skillsGrid img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  align-items: end;
 }
 
-.skillsGrid img:hover {
-  transform: scale(1.1);
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #e4b15b;
+  border-radius: 50%;
+}
+
+
+.heroLeft h1 {
+  font-size: clamp(6rem, 9vw, 9rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+}
+
+
+.heroRight {
+  align-self: end;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.breadcrumbLink {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #e4b15b;
+}
+
+.heroRight .active {
+  color: #e4b15b;
+  font-weight: 600;
+  cursor: default;
+}
+
+/* ================= CARD ================= */
+
+.aboutCard {
+  width: 84%;
+  margin: -160px auto 120px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 60px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.aboutCard h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.aboutImage img {
+  width: 420px;
+  border-radius: 16px;
+}
+
+.aboutText {
+  flex: 1;
+}
+
+.aboutText blockquote {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.aboutText h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.role {
+  color: #e4b15b;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.aboutText p {
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+
+  .heroLeft h1 {
+    font-size: 4rem;
+  }
+
+  .cardContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutImage img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .heroRight {
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
 }

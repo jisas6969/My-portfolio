@@ -12,7 +12,7 @@ const Footer = () => {
     Home
   </Link>
 
-  <Link to="about" smooth duration={500}>
+  <Link to="aboutHero" smooth duration={500}>
     About
   </Link>
 
