@@ -12,7 +12,7 @@ const Intro = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const fullText = "Louise Soledad";
+  const fullText = "Louise";
   const typingSpeed = 150;
   const deletingSpeed = 100;
   const pauseTime = 1500;

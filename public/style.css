@@ -26,19 +26,6 @@ body.light {
   background-color: beige;
   background-attachment: fixed;
 }
-body {
-  cursor: url("/cursor.png"), auto;
-}
-
-a,
-button,
-[role="button"],
-.desktopMenuListItem,
-.introBtn,
-.socialIcon,
-.clickable {
-  cursor: url("/pointer.png"), pointer;
-}
 
 
 

@@ -34,12 +34,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position:relative;
 
-  background: #1a1a1a;
+   background:
+  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+  url("../../assets/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-.dark .img-frame {
-  background-color: beige;
-}
+
 .socialLinks{
   position:absolute;
   right:50px;
@@ -56,16 +61,9 @@
   width:1px;
   height:80px;
   margin-bottom:10px;
-}
-.dark .socialLinks::after{
-  background: rgba(0,0,0,0.6);
-}
-
-/* LIGHT MODE */
-.light .socialLinks::after{
   background: rgba(255,255,255,0.6);
 }
-/* ICON STYLE */
+
 .socialLinks img{
   width:20px;
   height:20px;
@@ -227,22 +225,72 @@
 
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
+@media (max-width: 768px){
 
-  #intro{
-    flex-direction: column;
-    text-align: center;
-  }
+/* STACK LAYOUT */
+#intro{
+flex-direction:column;
+height:auto;
+padding:4rem 1.5rem;
+text-align:center;
+}
 
-  .introcontent{
-    padding: 2rem;
-    align-items: center;
-  }
+/* TEXT AREA */
+.introcontent{
+width:100%;
+padding:0;
+align-items:center;
+font-size:2.2rem;
+}
 
-  .img-frame{
-    width: 100%;
-    height: auto;
-    padding: 2rem;
-  }
+/* NAME SIZE */
+.introText{
+font-size:2.5rem;
+line-height:1.2;
+}
+
+/* HELLO */
+.hello{
+font-size:1.2rem;
+}
+
+/* BUTTONS */
+.introButtons{
+flex-direction:column;
+gap:14px;
+width:100%;
+align-items:center;
+}
+
+/* BUTTON SIZE */
+.btnPrimary,
+.btnOutline{
+width:220px;
+text-align:center;
+}
+
+/* IMAGE SECTION */
+.img-frame{
+width:100%;
+height:auto;
+margin-top:3rem;
+}
+
+/* IMAGE */
+.bg{
+max-width:320px;
+margin-bottom:0;
+}
+
+/* SOCIAL ICONS */
+.socialIcon{
+right:15px;
+bottom:60px;
+gap:16px;
+}
+
+.socialIcon img{
+width:18px;
+}
 
 }

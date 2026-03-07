@@ -116,7 +116,7 @@ filter: brightness(0);
 }
 
 .light .navbar.scrolled .desktopMenuImg {
-filter: brightness(0);
+filter: brightness(0)invert(1);
 }
 
 

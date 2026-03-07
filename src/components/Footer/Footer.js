@@ -16,7 +16,7 @@ const Footer = () => {
     About
   </Link>
 
-  <Link to="portfolio" smooth duration={500} offset={-112}>
+  <Link to="projectsWrapper" smooth duration={500} offset={-112}>
     Portfolio
   </Link>
 

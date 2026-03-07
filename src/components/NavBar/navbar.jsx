@@ -41,11 +41,11 @@ const Navbar = () => {
         </Link>
         <Link
           className="desktopMenuListItem"
-          to="project"
+          to="projectsWrapper"
           smooth
           duration={500}
         >
-          Project
+          Portfolio
         </Link>
         <Link className="desktopMenuListItem" to="contact" smooth duration={500}>
           Contact
