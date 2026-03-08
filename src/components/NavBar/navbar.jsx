@@ -33,24 +33,63 @@ const Navbar = () => {
       <img src={Logo} alt="logo" className="logo" />
 
       <div className="desktopMenu">
-        <Link className="desktopMenuListItem" to="intro" smooth duration={500}offset={-112}>
-          Home
-        </Link>
-        <Link className="desktopMenuListItem" to="aboutHero" smooth duration={500}>
-          About
-        </Link>
         <Link
           className="desktopMenuListItem"
+          activeClass="active"
+          to="intro"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-112}
+        >
+          Home
+        </Link>
+
+        <Link
+          className="desktopMenuListItem"
+          activeClass="active"
+          to="aboutHero"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          About
+        </Link>
+
+        <Link
+          className="desktopMenuListItem"
+          activeClass="active"
+          to="skillsContainer"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          Skills
+        </Link>
+
+        <Link
+          className="desktopMenuListItem"
+          activeClass="active"
           to="projectsWrapper"
-          smooth
+          spy={true}
+          smooth={true}
           duration={500}
         >
           Portfolio
         </Link>
-        <Link className="desktopMenuListItem" to="contact" smooth duration={500}>
+
+        <Link
+          className="desktopMenuListItem"
+          activeClass="active"
+          to="contactWrapper"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
           Contact
         </Link>
       </div>
+
       <button className="desktopMenuBtn" onClick={toggleTheme}>
         <img
           src={theme === "dark" ? sunImg : moonImg}

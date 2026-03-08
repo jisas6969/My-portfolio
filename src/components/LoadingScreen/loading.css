@@ -13,7 +13,6 @@
   /* GLASS EFFECT */
   background: rgba(0, 0, 0, 0.4);  /* dark transparent overlay */
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 
   z-index: 9999;
 

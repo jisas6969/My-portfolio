@@ -15,12 +15,15 @@ const Footer = () => {
   <Link to="aboutHero" smooth duration={500}>
     About
   </Link>
+  <Link to="skillsContainer" smooth duration={500}>
+    Skills
+  </Link>
 
   <Link to="projectsWrapper" smooth duration={500} offset={-112}>
     Portfolio
   </Link>
 
-  <Link to="contact" smooth duration={500} offset={-112}>
+  <Link to="contactWrapper" smooth duration={500} offset={-112}>
     Contact
   </Link>
 </div>

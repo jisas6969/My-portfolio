@@ -17,7 +17,7 @@ body.light .aboutText p {
 
 body.light .aboutCard {
   color: #1a1a1a;
-  background-color: beige;
+  background-color: transparent;
 }
 
 /* ================= HERO ================= */
@@ -91,12 +91,12 @@ body.light .aboutCard {
   cursor: default;
 }
 
-/* ================= CARD ================= */
+
 
 .aboutCard {
   width: 84%;
   margin: -160px auto 120px;
-  background: #1a1a1a;
+  background: transparent;
   border-radius: 20px;
   padding: 60px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.4);
@@ -107,7 +107,7 @@ body.light .aboutCard {
   margin-bottom: 50px;
 }
 
-/* ================= CARD CONTENT ================= */
+
 
 .cardContent {
   display: flex;

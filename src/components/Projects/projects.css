@@ -1,231 +1,263 @@
 /* ================= BASE ================= */
 
-.projectsWrapper {
-  color: beige;
-  overflow: hidden;
+.projectsWrapper{
+color:beige;
+overflow:hidden;
 }
 
 body.light .projectsWrapper,
 body.light .projectsLabel,
-body.light .heroRight {
-  color: #1a1a1a;
+body.light .heroRight{
+color:#1a1a1a;
 }
 
 
 /* ================= HERO ================= */
 
-.projectsHero {
-  height: 100vh;
-  padding: 0 8%;
-  display: flex;
-  align-items: center;
+.projectsHero{
+height:100vh;
+padding:0 8%;
+display:flex;
+align-items:center;
 }
 
-.heroGrid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  width: 100%;
-  align-items: end;
-}
-
-.heroLeft {
-  display: flex;
-  flex-direction: column;
-}
-
-.projectsLabel {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 40px;
-  font-size: 0.9rem;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: #e4b15b;
-  border-radius: 50%;
-}
-
-.heroLeft h1 {
-  font-size: clamp(6rem, 9vw, 9rem);
-  font-weight: 700;
-  line-height: 1.05;
-  margin: 0;
-}
-
-.heroRight {
-  align-self: end;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  display: flex;
-  gap: 8px;
-}
-
-.breadcrumbLink {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-
-.breadcrumbLink:hover {
-  color: #e4b15b;
-}
-
-.heroRight .active {
-  color: #e4b15b;
-}
-
-
-/* ================= CARD ================= */
-
-.projectsCard {
-  width: 84%;
-  margin: -160px auto 120px;
-  background: #1a1a1a;
-  border-radius: 20px;
-  padding: 60px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-  text-align: center;
-}
-
-body.light .projectsCard {
-  background: beige;
-  color: #1a1a1a;
-}
-
-.projectsCard h2 {
-  font-size: 2.5rem;
-}
-
-.projectName {
-  margin: 20px 0 40px;
-  opacity: 0.8;
-}
-
-
-/* ================= COVERFLOW ================= */
-
-.projectSwiper {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.swiper-slide {
-  transition: 0.4s ease;
-  opacity: 0.6;
-  filter: blur(2px);
-  transform: scale(0.8);
-}
-
-.swiper-slide-active {
-  opacity: 1;
-  filter: blur(0);
-  transform: scale(1.1);
-}
-
-.swiper-slide img {
-  width: 125%;
-  height: 350px;
-}
-
-.swiper-pagination-bullet {
-  background: #e4b15b;
-}
-
-
-
-
-.viewBtn {
-  margin-top: 40px;
-  padding: 12px 30px;
-  border: none;
-  background: #e4b15b;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.viewBtn:hover {
-  background: #d49d43;
-}
-
-
-/* ================= FULLSCREEN GALLERY ================= */
-
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.modalContent {
-  width: 95%;
-  max-width: 1400px;
-}
-
-.modalGrid{
+.heroGrid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-gap:30px;
+grid-template-columns:1fr auto;
+width:100%;
+align-items:end;
 }
 
-.modalGrid img {
-  width: 100%;
-  cursor: zoom-in;
-  transition: 0.3s;
+.heroLeft{
+display:flex;
+flex-direction:column;
 }
 
-.modalGrid img:hover {
-  transform: scale(1.05);
+.projectsLabel{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:40px;
+font-size:.9rem;
 }
 
-.closeBtn {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
+.dot{
+width:12px;
+height:12px;
+background:#e4b15b;
+border-radius:50%;
 }
-
-
-
-@media (max-width:1024px){
 
 .heroLeft h1{
-font-size:4rem;
+font-size:clamp(6rem,9vw,9rem);
+font-weight:700;
+line-height:1.05;
+margin:0;
 }
-
-.swiper-slide{
-transform:scale(0.9);
-}
-
-.swiper-slide-active{
-transform:scale(1);
-}
-
-}
-
-@media (max-width:768px){
 
 .heroRight{
-font-size:0.9rem;
-margin-top:20px;
+align-self:end;
+font-size:1.5rem;
+margin-bottom:15px;
+display:flex;
+gap:8px;
 }
+
+.breadcrumbLink{
+cursor:pointer;
+text-decoration:none;
+color:inherit;
+}
+
+.breadcrumbLink:hover{
+color:#e4b15b;
+}
+
+.heroRight .active{
+color:#e4b15b;
+}
+
+
+/* ================= PROJECT CARD SECTION ================= */
 
 .projectsCard{
-padding:40px;
+width:84%;
+margin:-160px auto 120px;
+background:transparent;
+border-radius:20px;
+padding:60px;
+box-shadow:0 25px 60px rgba(0,0,0,.4);
+text-align:center;
 }
 
+body.light .projectsCard{
+color:#1a1a1a;
 }
+
+.projectsCard h2{
+font-size:2.5rem;
+}
+
+
+/* ================= PROJECT GRID ================= */
+
+.projectsGrid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0,520px));
+justify-content:center;
+gap:40px;
+margin-top:50px;
+}
+
+
+/* ================= PROJECT CARD ================= */
+
+.projectCard{
+position:relative;
+cursor:pointer;
+max-width:520px;
+margin:auto;
+}
+
+.projectCard img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:10px;
+}
+
+
+
+
+/* ================= HOVER OVERLAY ================= */
+
+.projectOverlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.6);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:.3s;
+border-radius:10px;
+}
+
+.projectOverlay p{
+color:white;
+font-size:18px;
+border:2px solid white;
+padding:10px 20px;
+letter-spacing:1px;
+}
+
+.projectCard:hover .projectOverlay{
+opacity:1;
+}
+
+
+/* ================= MODAL OVERLAY ================= */
+
+.modalOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#000;
+overflow-y:auto;
+padding:120px 0;
+z-index:2000;
+}
+
+
+/* ================= MODAL CONTAINER ================= */
+
+.projectModal{
+width:90%;
+max-width:1400px;
+margin:auto;
+position:relative;
+}
+
+
+/* ================= MODAL GRID ================= */
+
+.projectLayout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:90px;
+align-items:start;
+}
+
+
+/* ================= LEFT CONTENT ================= */
+
+.projectContent{
+display:flex;
+flex-direction:column;
+}
+
+.projectTitle{
+font-size:48px;
+margin-bottom:40px;
+}
+
+.projectImage{
+width:100%;
+height:auto;
+margin-bottom:40px;
+object-fit:cover;
+}
+
+.projectVideo{
+width:100%;
+margin-bottom:40px;
+border-radius:10px;
+}
+
+
+/* ================= RIGHT SIDEBAR ================= */
+
+.projectSidebar{
+position:sticky;
+top:120px;
+height:fit-content;
+}
+
+.infoBlock{
+margin-bottom:40px;
+}
+
+.infoBlock span{
+font-size:12px;
+letter-spacing:2px;
+opacity:.6;
+display:block;
+margin-bottom:10px;
+}
+
+.infoBlock p{
+line-height:1.6;
+}
+
+
+/* ================= CLOSE BUTTON ================= */
+
+.closeBtn{
+position:fixed;
+top:40px;
+right:60px;
+background:rgba(255,255,255,.1);
+border:none;
+width:50px;
+height:50px;
+border-radius:50%;
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
 /* ================= IMAGE VIEWER ================= */
 
 .imageViewer{
@@ -256,7 +288,8 @@ opacity:1;
 }
 }
 
-/* CLOSE */
+
+/* ================= VIEWER BUTTONS ================= */
 
 .viewerClose{
 position:absolute;
@@ -269,8 +302,6 @@ font-size:32px;
 cursor:pointer;
 }
 
-/* ARROWS */
-
 .viewerPrev,
 .viewerNext{
 position:absolute;
@@ -282,7 +313,6 @@ font-size:60px;
 color:white;
 cursor:pointer;
 padding:20px;
-transition:0.3s;
 }
 
 .viewerPrev{
@@ -295,5 +325,43 @@ right:40px;
 
 .viewerPrev:hover,
 .viewerNext:hover{
-opacity:0.7;
+opacity:.7;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+
+.heroLeft h1{
+font-size:4rem;
+}
+
+.projectLayout{
+grid-template-columns:1fr;
+}
+
+.projectInfo{
+position:relative;
+top:0;
+padding-top:40px;
+}
+
+}
+
+@media(max-width:768px){
+
+.heroRight{
+font-size:.9rem;
+margin-top:20px;
+}
+
+.projectsCard{
+padding:40px;
+}
+
+.projectsGrid{
+grid-template-columns:1fr;
+}
+
 }

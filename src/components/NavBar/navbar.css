@@ -75,7 +75,11 @@ color: rgb(212, 163, 64);
 padding-bottom: 0.5rem;
 border-bottom: 3px solid rgb(212, 163, 64);
 }
-
+.desktopMenuListItem.active {
+  color: rgb(212, 163, 64);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid rgb(212, 163, 64);
+}
 
 .desktopMenuBtn {
 background: transparent;

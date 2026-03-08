@@ -1,0 +1,337 @@
+/* ================= BASE ================= */
+
+.contactWrapper{
+  color: beige;
+  overflow: hidden;
+}
+
+/* ================= LIGHT MODE ================= */
+
+body.light .contactWrapper,
+body.light .contactLabel,
+body.light .heroRight,
+body.light .contactInfoBox p{
+  color:#1a1a1a;
+}
+
+/* ================= HERO ================= */
+
+.contactHero{
+  height:100vh;
+  padding:0 8%;
+  display:flex;
+  align-items:center;
+}
+
+.heroGrid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  width:100%;
+  align-items:end;
+}
+
+.heroLeft{
+  display:flex;
+  flex-direction:column;
+}
+
+.contactLabel{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:40px;
+  font-size:0.9rem;
+}
+
+.dot{
+  width:12px;
+  height:12px;
+  background:#e4b15b;
+  border-radius:50%;
+}
+
+.heroLeft h1{
+  font-size:clamp(6rem,9vw,9rem);
+  font-weight:700;
+  line-height:1.05;
+  margin:0;
+}
+
+.heroRight{
+  align-self:end;
+  font-size:1.5rem;
+  margin-bottom:15px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.breadcrumbLink{
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+  transition:0.3s ease;
+}
+
+.breadcrumbLink:hover{
+  color:#e4b15b;
+}
+
+.heroRight .active{
+  color:#e4b15b;
+  font-weight:600;
+  cursor:default;
+}
+
+/* ================= CONTACT CARDS ================= */
+
+.contactCards{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  margin-top:-200px;
+  margin-bottom:120px;
+  flex-wrap:wrap;
+}
+
+.contactCardItem{
+  width:520px;
+  height:220px;
+
+  background:linear-gradient(145deg,#1a1a1a,#121212);
+  border-radius:20px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  gap:14px;
+  padding:40px;
+
+  transition:0.3s ease;
+}
+
+.contactCardItem:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+.iconBox{
+  width:80px;
+  height:80px;
+
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:10px;
+}
+
+.iconBox svg{
+  font-size:36px;
+  color:#e4b15b;
+}
+
+.contactCardItem h3{
+  font-size:1.6rem;
+  font-weight:600;
+}
+
+.contactCardItem p{
+  font-size:1.1rem;
+  opacity:0.7;
+}
+
+/* ================= CONTACT BOTTOM ================= */
+
+.contactBottom{
+  width:84%;
+  margin:120px auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+/* ================= FORM ================= */
+
+.contactFormBox{
+  background:linear-gradient(145deg,#1a1a1a,#121212);
+  padding:50px;
+  border-radius:20px;
+}
+
+.contactFormBox h2{
+  font-size:2rem;
+  margin-bottom:30px;
+}
+
+.formGroup{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:25px;
+}
+
+.formGroup label{
+  font-size:.9rem;
+  margin-bottom:6px;
+  opacity:.8;
+}
+
+.formGroup input,
+.formGroup textarea{
+  background:transparent;
+  border:none;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding:10px 0;
+  color:inherit;
+  outline:none;
+}
+
+.formGroup textarea{
+  height:100px;
+  resize:none;
+}
+
+/* ================= SEND BUTTON ================= */
+
+.sendBtn{
+  margin-top:30px;
+  width:100%;
+  padding:14px;
+
+  border:none;
+  background:#0f1114;
+  color:beige;
+
+  font-weight:600;
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.sendBtn:hover{
+  transform:translateY(-2px);
+  background:#000;
+}
+.light .sendBtn:hover {
+  background-color: rgb(230, 180, 80);
+}
+/* LIGHT MODE BUTTON */
+
+body.light .sendBtn{
+  background:#181614;
+  color:beige;
+}
+
+/* DARK MODE BUTTON */
+
+body.dark .sendBtn{
+  background:beige;
+  color:#0f1114;
+}
+
+body.dark .sendBtn:hover{
+  background:#e4b15b;
+}
+
+/* ================= RIGHT INFO ================= */
+
+.contactInfoBox{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  justify-content:center;
+}
+
+.contactInfoBox h2{
+  font-size:3rem;
+  line-height:1.2;
+}
+
+.contactInfoBox p{
+  line-height:1.7;
+  opacity:.8;
+  max-width:420px;
+}
+
+/* ================= CV BUTTON ================= */
+
+.cvButton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 32px;
+  margin-top:20px;
+
+  border:2px solid #0f1114;
+  color:#0f1114;
+
+  font-weight:600;
+  text-decoration:none;
+
+  width:fit-content;
+  transition:0.3s;
+}
+
+.cvButton:hover{
+  background:#0f1114;
+  color:beige;
+}
+
+/* DARK MODE */
+
+body.dark .cvButton{
+  border:2px solid beige;
+  color:beige;
+}
+
+body.dark .cvButton:hover{
+  background:beige;
+  color:#0f1114;
+}
+
+/* ================= LIGHT MODE CARD FIX ================= */
+
+body.light .contactCardItem{
+  background:beige;
+  color:#1a1a1a;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+body.light .contactFormBox{
+  background:beige;
+  color:#1a1a1a;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+body.light .formGroup input,
+body.light .formGroup textarea{
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  color:#1a1a1a;
+}
+
+body.light .iconBox{
+  border:1px solid rgba(0,0,0,0.1);
+}
+/* ================= MAP FULL WIDTH ================= */
+
+.mapWrapper{
+width:100%;
+height:420px;
+margin-top:120px;
+overflow:hidden;
+}
+
+.mapWrapper iframe{
+width:100%;
+height:100%;
+border:none;
+filter:grayscale(100%);
+}

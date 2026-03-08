@@ -16,6 +16,7 @@
   height: 100%;
 
   padding: 0 6rem;
+  margin-top: 8rem;
 
   font-size: 5rem;
   font-weight: 700;
@@ -36,13 +37,6 @@
   align-items: center;
   position:relative;
 
-   background:
-  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-  url("../../assets/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .socialLinks{
@@ -133,8 +127,10 @@
   background:#0f1114;
   color:white;
   text-decoration:none;
+  cursor: pointer;
 
   padding:18px 42px;
+  margin-top: 5rem;
 
   font-size:13px;
   letter-spacing:4px;
@@ -154,8 +150,9 @@
   border:2px solid #0f1114;
   color:#0f1114;
   text-decoration:none;
-
+  cursor: pointer;
   padding:18px 42px;
+  margin-top: 5rem;
 
   font-size:13px;
   letter-spacing:4px;
