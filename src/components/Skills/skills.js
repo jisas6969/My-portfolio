@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./skills.css";
 
-/* IMPORT ICONS (recommended way) */
 import cssIcon from "../../assets/icons/css.png";
 import htmlIcon from "../../assets/icons/html.png";
 import jsIcon from "../../assets/icons/js.png";
@@ -10,7 +9,6 @@ import javaIcon from "../../assets/icons/java.png";
 
 import blenderIcon from "../../assets/icons/blender.png";
 import wordpressIcon from "../../assets/icons/wordpress.png";
-import vscodeIcon from "../../assets/icons/vscode.png";
 
 const Skills = () => {
   const gridRefs = useRef([]);
@@ -38,35 +36,75 @@ const Skills = () => {
     <section id="skills">
       <div className="skillsContainer">
 
-        <h2 className="skillsTitleBox">Technical Skills</h2>
+        <h2 className="skillsTitle">Technical Skills</h2>
 
-        {/* KNOWLEDGE SECTION */}
+        {/* FRONTEND */}
         <div className="skillsGroup">
-          <h3>Knowledgeable in:</h3>
+          <h3>Frontend Development</h3>
 
-          <div
-            className="skillsGrid"
-            ref={(el) => (gridRefs.current[0] = el)}
-          >
-            <img src={cssIcon} alt="CSS" />
-            <img src={htmlIcon} alt="HTML" />
-            <img src={jsIcon} alt="JavaScript" />
-            <img src={pythonIcon} alt="Python" />
-            <img src={javaIcon} alt="Java" />
+          <div className="skillsGrid" ref={(el) => (gridRefs.current[0] = el)}>
+
+            <div className="skillCard">
+              <img src={htmlIcon} alt="HTML" />
+              <p className="skillName">HTML</p>
+              <span className="skillLevel intermediate">Intermediate</span>
+            </div>
+
+            <div className="skillCard">
+              <img src={cssIcon} alt="CSS" />
+              <p className="skillName">CSS</p>
+              <span className="skillLevel intermediate">Intermediate</span>
+            </div>
+
+            <div className="skillCard">
+              <img src={jsIcon} alt="JavaScript" />
+              <p className="skillName">JavaScript</p>
+              <span className="skillLevel beginner">Beginner</span>
+            </div>
+
           </div>
         </div>
 
-        {/* TOOLS SECTION */}
+        {/* PROGRAMMING */}
         <div className="skillsGroup">
-          <h3>Tools & Platforms:</h3>
+          <h3>Programming</h3>
 
-          <div
-            className="skillsGrid"
-            ref={(el) => (gridRefs.current[1] = el)}
-          >
-            <img src={blenderIcon} alt="Blender" />
-            <img src={wordpressIcon} alt="WordPress" />
-            <img src={vscodeIcon} alt="VS Code" />
+          <div className="skillsGrid" ref={(el) => (gridRefs.current[1] = el)}>
+
+            <div className="skillCard">
+              <img src={pythonIcon} alt="Python" />
+              <p className="skillName">Python</p>
+              <span className="skillLevel beginner">Beginner</span>
+            </div>
+
+            <div className="skillCard">
+              <img src={javaIcon} alt="Java" />
+              <p className="skillName">Java</p>
+              <span className="skillLevel beginner">Beginner</span>
+            </div>
+
+          </div>
+        </div>
+
+        {/* TOOLS */}
+        <div className="skillsGroup">
+          <h3>Tools & Platforms</h3>
+
+          <div className="skillsGrid" ref={(el) => (gridRefs.current[2] = el)}>
+
+            <div className="skillCard">
+              <img src={blenderIcon} alt="Blender" />
+              <p className="skillName">Blender</p>
+              <span className="skillLevel beginner">Beginner</span>
+            </div>
+
+            <div className="skillCard">
+              <img src={wordpressIcon} alt="WordPress" />
+              <p className="skillName">WordPress</p>
+              <span className="skillLevel beginner">Beginner</span>
+            </div>
+
+
           </div>
         </div>
 

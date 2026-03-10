@@ -61,7 +61,7 @@ const Intro = () => {
   </Link>
 
   <Link
-    to="contact"
+    to="contactWrapper"
     smooth={true}
     duration={500}
     offset={-112}

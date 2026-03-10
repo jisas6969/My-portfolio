@@ -1,18 +1,13 @@
-/* ================= BASE ================= */
-
 .projectsWrapper{
 color:beige;
 overflow:hidden;
 }
 
-body.light .projectsWrapper,
-body.light .projectsLabel,
-body.light .heroRight{
+body.light .projectsWrapper{
 color:#1a1a1a;
 }
 
-
-/* ================= HERO ================= */
+/* HERO */
 
 .projectsHero{
 height:100vh;
@@ -63,35 +58,14 @@ display:flex;
 gap:8px;
 }
 
-.breadcrumbLink{
-cursor:pointer;
-text-decoration:none;
-color:inherit;
-}
 
-.breadcrumbLink:hover{
-color:#e4b15b;
-}
-
-.heroRight .active{
-color:#e4b15b;
-}
-
-
-/* ================= PROJECT CARD SECTION ================= */
+/* PROJECT CARD SECTION */
 
 .projectsCard{
-width:84%;
+width:85%;
 margin:-160px auto 120px;
-background:transparent;
-border-radius:20px;
 padding:60px;
-box-shadow:0 25px 60px rgba(0,0,0,.4);
 text-align:center;
-}
-
-body.light .projectsCard{
-color:#1a1a1a;
 }
 
 .projectsCard h2{
@@ -99,56 +73,63 @@ font-size:2.5rem;
 }
 
 
-/* ================= PROJECT GRID ================= */
+/* PROJECT GRID */
 
 .projectsGrid{
 display:grid;
-grid-template-columns:repeat(2, minmax(0,520px));
-justify-content:center;
-gap:40px;
-margin-top:50px;
+grid-template-columns:repeat(2,1fr);
+gap:0;
+margin-top:60px;
 }
 
 
-/* ================= PROJECT CARD ================= */
+/* PROJECT CARD */
 
 .projectCard{
 position:relative;
+overflow:hidden;
 cursor:pointer;
-max-width:520px;
-margin:auto;
+aspect-ratio:4/3;
 }
 
 .projectCard img{
 width:100%;
-height:350px;
+height:100%;
 object-fit:cover;
-border-radius:10px;
+display:block;
+transition:transform .4s ease;
+}
+
+.projectCard:hover img{
+transform:scale(1.05);
 }
 
 
-
-
-/* ================= HOVER OVERLAY ================= */
+/* HOVER OVERLAY */
 
 .projectOverlay{
 position:absolute;
-inset:0;
-background:rgba(0,0,0,.6);
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#1a1a1a;
+
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
+
 opacity:0;
-transition:.3s;
-border-radius:10px;
+transition:0.4s ease;
+text-align:center;
 }
 
 .projectOverlay p{
 color:white;
-font-size:18px;
-border:2px solid white;
-padding:10px 20px;
+font-size:22px;
 letter-spacing:1px;
+font-weight:500;
 }
 
 .projectCard:hover .projectOverlay{
@@ -156,7 +137,7 @@ opacity:1;
 }
 
 
-/* ================= MODAL OVERLAY ================= */
+/* MODAL */
 
 .modalOverlay{
 position:fixed;
@@ -164,14 +145,11 @@ top:0;
 left:0;
 width:100%;
 height:100vh;
-background:#000;
+background:black;
 overflow-y:auto;
 padding:120px 0;
 z-index:2000;
 }
-
-
-/* ================= MODAL CONTAINER ================= */
 
 .projectModal{
 width:90%;
@@ -180,22 +158,10 @@ margin:auto;
 position:relative;
 }
 
-
-/* ================= MODAL GRID ================= */
-
 .projectLayout{
 display:grid;
 grid-template-columns:2fr 1fr;
-gap:90px;
-align-items:start;
-}
-
-
-/* ================= LEFT CONTENT ================= */
-
-.projectContent{
-display:flex;
-flex-direction:column;
+gap:80px;
 }
 
 .projectTitle{
@@ -205,24 +171,21 @@ margin-bottom:40px;
 
 .projectImage{
 width:100%;
-height:auto;
 margin-bottom:40px;
-object-fit:cover;
 }
 
 .projectVideo{
 width:100%;
-margin-bottom:40px;
 border-radius:10px;
+margin-bottom:40px;
 }
 
 
-/* ================= RIGHT SIDEBAR ================= */
+/* SIDEBAR */
 
 .projectSidebar{
 position:sticky;
 top:120px;
-height:fit-content;
 }
 
 .infoBlock{
@@ -237,12 +200,8 @@ display:block;
 margin-bottom:10px;
 }
 
-.infoBlock p{
-line-height:1.6;
-}
 
-
-/* ================= CLOSE BUTTON ================= */
+/* CLOSE BUTTON */
 
 .closeBtn{
 position:fixed;
@@ -258,7 +217,8 @@ font-size:22px;
 cursor:pointer;
 }
 
-/* ================= IMAGE VIEWER ================= */
+
+/* IMAGE VIEWER */
 
 .imageViewer{
 position:fixed;
@@ -274,22 +234,7 @@ z-index:3000;
 max-width:90%;
 max-height:90vh;
 object-fit:contain;
-animation:zoomViewer .35s ease;
 }
-
-@keyframes zoomViewer{
-from{
-transform:scale(.8);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
-}
-
-
-/* ================= VIEWER BUTTONS ================= */
 
 .viewerClose{
 position:absolute;
@@ -323,45 +268,165 @@ left:40px;
 right:40px;
 }
 
-.viewerPrev:hover,
-.viewerNext:hover{
-opacity:.7;
-}
 
+/* RESPONSIVE */
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:1024px){
+/* ---------- LARGE TABLET ---------- */
+
+@media (max-width:1024px){
+
+.projectsHero{
+height:auto;
+padding:120px 6% 80px;
+}
+
+.heroGrid{
+grid-template-columns:1fr;
+gap:30px;
+}
 
 .heroLeft h1{
-font-size:4rem;
+font-size:clamp(3rem,7vw,4.5rem);
+}
+
+.heroRight{
+align-self:flex-start;
+font-size:1rem;
+}
+
+.projectsCard{
+width:90%;
+margin:-120px auto 100px;
+padding:50px;
+}
+
+.projectsGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
 
 .projectLayout{
 grid-template-columns:1fr;
+gap:60px;
 }
 
-.projectInfo{
+.projectSidebar{
 position:relative;
 top:0;
-padding-top:40px;
 }
 
 }
 
-@media(max-width:768px){
+
+/* ---------- TABLET ---------- */
+
+@media (max-width:768px){
+
+.projectsHero{
+padding:100px 6% 60px;
+}
+
+.heroLeft h1{
+font-size:clamp(2.5rem,8vw,3.5rem);
+}
 
 .heroRight{
 font-size:.9rem;
-margin-top:20px;
+margin-top:10px;
+flex-wrap:wrap;
 }
 
 .projectsCard{
+width:92%;
+margin:-90px auto 80px;
 padding:40px;
+}
+
+.projectsCard h2{
+font-size:2rem;
 }
 
 .projectsGrid{
 grid-template-columns:1fr;
+gap:25px;
+}
+
+.projectTitle{
+font-size:36px;
+}
+
+.modalOverlay{
+padding:100px 0;
+}
+
+.closeBtn{
+top:20px;
+right:25px;
+}
+
+.viewerPrev,
+.viewerNext{
+font-size:40px;
+}
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:480px){
+
+.projectsHero{
+padding:90px 5% 50px;
+}
+
+.heroLeft h1{
+font-size:2.2rem;
+}
+
+.projectsLabel{
+font-size:.8rem;
+margin-bottom:20px;
+}
+
+.projectsCard{
+width:94%;
+margin:-70px auto 60px;
+padding:30px 22px;
+}
+
+.projectsCard h2{
+font-size:1.6rem;
+}
+
+.projectTitle{
+font-size:28px;
+margin-bottom:25px;
+}
+
+.projectOverlay p{
+font-size:18px;
+}
+
+.closeBtn{
+width:40px;
+height:40px;
+font-size:18px;
+}
+
+.viewerPrev,
+.viewerNext{
+font-size:30px;
+}
+
+.viewerPrev{
+left:10px;
+}
+
+.viewerNext{
+right:10px;
 }
 
 }

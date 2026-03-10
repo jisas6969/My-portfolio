@@ -13,6 +13,13 @@ import video1 from "../../assets/projectVideo.mp4";
 
 const images = [img1, img2, img3, img4, img5, img6];
 
+const projects = [
+  { img: img1 },
+  { img: img1 },
+  { img: img1 },
+  { img: img1 },
+];
+
 const Projects = () => {
 
 const [openModal,setOpenModal] = useState(false);
@@ -34,7 +41,7 @@ return (
 
 <section className="projectsWrapper">
 
-{/* HERO SECTION */}
+{/* HERO */}
 
 <div className="projectsHero">
 
@@ -75,8 +82,7 @@ Home
 </div>
 
 
-
-{/* PROJECT GRID */}
+{/* PROJECTS CARD */}
 
 <div className="projectsCard">
 
@@ -84,37 +90,27 @@ Home
 
 <div className="projectsGrid">
 
-{/* PROJECT 1 */}
+{projects.map((project,index)=>{
+
+return(
 
 <div
+key={index}
 className="projectCard"
 onClick={()=>setOpenModal(true)}
 >
 
-<img src={img1} alt="project"/>
+<img src={project.img} alt="project"/>
 
 <div className="projectOverlay">
 <p>View Project</p>
 </div>
 
-
-
 </div>
 
+);
 
-{/* PROJECT 2 */}
-
-<div className="projectCard">
-
-<img src={img2} alt="project"/>
-
-<div className="projectOverlay">
-<p>View Project</p>
-</div>
-
-
-
-</div>
+})}
 
 </div>
 
@@ -137,7 +133,7 @@ onClick={()=>setOpenModal(true)}
 <div className="projectLayout">
 
 
-{/* LEFT CONTENT */}
+{/* LEFT */}
 
 <div className="projectContent">
 
@@ -148,7 +144,7 @@ BridgeTalk: A Multimodal Speech and Sign Language Translation System
 <img
 src={img1}
 className="projectImage"
-alt="BridgeTalk project interface preview"
+alt="BridgeTalk project"
 onClick={()=>setViewerIndex(0)}
 />
 
@@ -159,7 +155,7 @@ onClick={()=>setViewerIndex(0)}
 </div>
 
 
-{/* RIGHT SIDEBAR */}
+{/* RIGHT */}
 
 <div className="projectSidebar">
 
@@ -183,11 +179,11 @@ designed to assist communication between hearing and deaf users.
 
 <div className="infoBlock">
 <span>CLIENT</span>
-<p>Bagong silang elementary Schools</p>
+<p>Bagong Silang Elementary School</p>
 </div>
 
 <div className="infoBlock">
-<span>Language</span>
+<span>LANGUAGE</span>
 <p>Python</p>
 </div>
 
@@ -203,7 +199,7 @@ designed to assist communication between hearing and deaf users.
 
 
 
-{/* FULLSCREEN IMAGE VIEWER */}
+{/* IMAGE VIEWER */}
 
 {viewerIndex !== null && (
 

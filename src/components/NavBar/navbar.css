@@ -1,138 +1,283 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-
-
-.navbar {
-height: 7rem;
-width: 100%;
-max-width: 125rem;
-margin: 0 auto;
-padding: 1rem 5rem;
-
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-position: sticky;
-top: 0;
-z-index: 100;
-
-background-color: transparent;
-transition: background-color 0.3s ease, box-shadow 0.3s ease;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
+/* NAVBAR */
 
-.navbar.scrolled {
-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-backdrop-filter: blur(10px);
+.navbar{
+height:7rem;
+width:100%;
+max-width:125rem;
+margin:0 auto;
+padding:1rem 5rem;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+position:sticky;
+top:0;
+z-index:100;
+
+background-color:transparent;
+transition:background-color .3s ease, box-shadow .3s ease;
 }
 
+/* SCROLLED NAVBAR */
 
-.dark .navbar.scrolled {
-    background-color: rgb(34, 32, 30, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    color: beige;
+.navbar.scrolled{
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+backdrop-filter:blur(10px);
 }
 
-.light .navbar.scrolled {
-    background-color: rgb(34, 32, 30, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    color: beige;
+.dark .navbar.scrolled{
+background-color:rgba(34,32,30,.8);
+border-bottom:1px solid rgba(255,255,255,.15);
+color:beige;
 }
 
-
-
-.logo {
-object-fit: cover;
-height: 4rem;
-width: 5rem;
-margin-right: auto;
+.light .navbar.scrolled{
+background-color:rgba(34,32,30,.8);
+border-bottom:1px solid rgba(255,255,255,.15);
+color:beige;
 }
 
+/* LOGO */
 
-.desktopMenu {
-display: flex;
-align-items: center;
+.logo{
+object-fit:cover;
+height:4rem;
+width:5rem;
+margin-right:auto;
 }
 
+/* DESKTOP MENU */
 
-.desktopMenuListItem {
-margin: 0 1.5rem;
-font-size: 1.3rem;
-text-decoration: none;
-color: inherit;
-cursor: pointer;
-
-transition: color 0.2s ease, border-bottom 0.2s ease;
+.desktopMenu{
+display:flex;
+align-items:center;
 }
 
+/* MENU ITEMS */
 
-.desktopMenuListItem:hover {
-color: rgb(212, 163, 64);
-padding-bottom: 0.5rem;
-border-bottom: 3px solid rgb(212, 163, 64);
-}
-.desktopMenuListItem.active {
-  color: rgb(212, 163, 64);
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid rgb(212, 163, 64);
-}
-
-.desktopMenuBtn {
-background: transparent;
-border: none;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-padding: 1rem;
-margin-left: 3rem;
-
-border-radius: 50%;
-max-height: 64px;
-max-width: 64px;
-
-cursor: pointer;
-transition: transform 0.2s ease;
+.desktopMenuListItem{
+margin:0 1.5rem;
+font-size:1.3rem;
+text-decoration:none;
+color:inherit;
+cursor:pointer;
+position:relative;
+transition:color .2s ease, border-bottom .2s ease;
 }
 
-.desktopMenuBtn:hover {
-transform: scale(1.1);
+.desktopMenuListItem::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:1px;   /* changed from 2px to 1px */
+background:#d4a340;
+transition:.3s;
 }
 
-
-.desktopMenuImg {
-object-fit: cover;
-width: 22px;
-height: 22px;
-
-filter: brightness(0) invert(1);
-transition: filter 0.25s ease, transform 0.2s ease;
+.desktopMenuListItem:hover::after,
+.desktopMenuListItem.active::after{
+width:100%;
 }
 
+/* THEME BUTTON */
 
-.light .navbar:not(.scrolled) .desktopMenuImg {
-filter: brightness(0);
+.desktopMenuBtn{
+background:transparent;
+border:none;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:1rem;
+margin-left:3rem;
+
+border-radius:50%;
+max-height:64px;
+max-width:64px;
+
+cursor:pointer;
+transition:transform .2s ease;
 }
 
-.light .navbar.scrolled .desktopMenuImg {
-filter: brightness(0)invert(1);
+.desktopMenuBtn:hover{
+transform:scale(1.1);
 }
 
+/* THEME ICON */
 
-@media (max-width: 768px) {
+.desktopMenuImg{
+object-fit:cover;
+width:22px;
+height:22px;
 
-.navbar {
-padding: 1rem 2rem;
+filter:brightness(0) invert(1);
+transition:filter .25s ease, transform .2s ease;
 }
 
-.desktopMenuListItem {
-margin: 0 1rem;
-font-size: 1.1rem;
+.light .navbar:not(.scrolled) .desktopMenuImg{
+filter:brightness(0);
+}
+
+.light .navbar.scrolled .desktopMenuImg{
+filter:brightness(0) invert(1);
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
+margin-left:20px;
+}
+
+/* MOBILE MENU */
+
+.mobileMenu{
+position:fixed;
+top:0;
+right:-100%;
+
+width:260px;
+height:100vh;
+
+background:#1a1a1a;
+
+display:flex;
+flex-direction:column;
+gap:30px;
+
+padding:120px 40px;
+
+transition:.4s ease;
+
+z-index:999;
+}
+
+.mobileMenu a{
+color:beige;
+text-decoration:none;
+font-size:20px;
+cursor:pointer;
+}
+
+.mobileMenu.active{
+right:0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ================= RESPONSIVE ================= */
+
+/* LAPTOP */
+
+@media (max-width:1024px){
+
+.navbar{
+padding:1rem 3rem;
+}
+
+.desktopMenu{
+gap:20px;
+}
+
+.desktopMenuListItem{
+margin:0;
+font-size:1.1rem;
+}
+
+.desktopMenuBtn{
+margin-left:1.5rem;
+}
+
+.logo{
+height:3.6rem;
+width:auto;
+}
+
+}
+
+/* TABLET */
+
+@media (max-width:768px){
+
+.navbar{
+padding:0.8rem 2rem;
+height:6rem;
+}
+
+.logo{
+height:3.2rem;
+}
+
+/* hide desktop menu */
+
+.desktopMenu{
+display:none;
+}
+
+/* show hamburger */
+
+.hamburger{
+display:block;
+font-size:30px;
+}
+
+/* adjust theme button */
+
+.desktopMenuBtn{
+margin-left:auto;
+padding:.6rem;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:480px){
+
+.navbar{
+padding:.6rem 1.2rem;
+height:5rem;
+}
+
+.logo{
+height:2.8rem;
+}
+
+.desktopMenuBtn{
+padding:.4rem;
+margin-left:auto;
+}
+
+.desktopMenuImg{
+width:18px;
+height:18px;
+}
+
+.hamburger{
+font-size:26px;
+}
+
+/* mobile menu */
+
+.mobileMenu{
+width:220px;
+padding:90px 25px;
+}
+
+.mobileMenu a{
+font-size:17px;
 }
 
 }

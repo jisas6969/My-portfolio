@@ -95,6 +95,7 @@
 }
 
 
+
 /* NAME */
 .introName {
   color: rgb(212, 163, 64);
@@ -125,7 +126,7 @@
 /* PRIMARY BUTTON */
 .btnPrimary{
   background:#0f1114;
-  color:white;
+  color:beige;
   text-decoration:none;
   cursor: pointer;
 
@@ -162,8 +163,8 @@
 }
 
 .btnOutline:hover{
-  background:#0f1114;
-  color:white;
+  background:rgb(230, 180, 80);
+  color:beige;
 }
 
 /* DARK MODE BUTTON */
@@ -176,17 +177,17 @@
   background-color: rgb(230, 180, 80);
 }
 .dark .btnPrimary{
-  background:white;
+  background:beige;
   color:#0f1114;
 }
 
 .dark .btnOutline{
-  border:2px solid white;
-  color:white;
+  border:2px solid beige;
+  color:beige;
 }
 
 .dark .btnOutline:hover{
-  background:white;
+  background:rgb(230, 180, 80);
   color:#0f1114;
 }
 .dark .btnPrimary:hover {
